@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "636d8427725588be78878fd4"
+  },
+  "name": "Pelle",
+  "description": "Un outil indémodable, toujours utile pour creuser"
+},{
+  "_id": {
+    "$oid": "636ea3e9841decdc2775d58f"
+  },
+  "name": "Engrais",
+  "description": "Excellent pour nourrir toutes sortes de plants"
+},{
+  "_id": {
+    "$oid": "636ea853056fc0afbfbc1b18"
+  },
+  "name": "Arrosoir",
+  "description": "Tout comme vous, vos plantes ont soif!"
+}]

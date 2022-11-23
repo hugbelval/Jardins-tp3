@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "636e87372a7c87d0ca89119e"
+  },
+  "email": "michel@michel.ca",
+  "hashPwd": "10B05C446EA776CDCAE1AB10F5DCDBAD5EEB9250A8B6F62752E6D4E755850FAB",
+  "firstName": "Michel",
+  "lastName": "Tremblay",
+  "address": "65 rue du Livre, Montréal",
+  "telephone": "5816663333",
+  "subscriptionEnd": {
+    "$date": {
+      "$numberLong": "1699723959280"
+    }
+  },
+  "isAdmin": false
+},{
+  "_id": {
+    "$oid": "636e8efa8b5ace6bf950b38e"
+  },
+  "email": "test@g.com",
+  "hashPwd": "ECD71870D1963316A97E3AC3408C9835AD8CF0F3C1BC703527C30265534F75AE",
+  "firstName": "Laurent",
+  "lastName": "Drolet",
+  "address": "123 rue du Midlane, Québec",
+  "telephone": "4183334444",
+  "subscriptionEnd": {
+    "$date": {
+      "$numberLong": "1673586000000"
+    }
+  },
+  "isAdmin": true
+},{
+  "_id": {
+    "$oid": "636ea8dd056fc0afbfbc1b1b"
+  },
+  "email": "michel@michel.ca",
+  "hashPwd": "10B05C446EA776CDCAE1AB10F5DCDBAD5EEB9250A8B6F62752E6D4E755850FAB",
+  "firstName": "Arthur",
+  "lastName": "Grimpeur",
+  "address": "7 rue du Délire, Québec",
+  "telephone": "5817772222",
+  "subscriptionEnd": {
+    "$date": {
+      "$numberLong": "1636651959280"
+    }
+  },
+  "isAdmin": false
+}]
