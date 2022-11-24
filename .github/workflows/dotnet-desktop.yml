@@ -87,10 +87,14 @@ jobs:
       run: dotnet test --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
       
       
-    - name: Upload dotnet test results
-      uses: actions/upload-artifact@v3
+    - name: Create Issue Action
+      if: ${{ failure() }}
+      uses: nashmaniac/create-issue-action@v1.1
       with:
-        name: dotnet-results-${{ matrix.dotnet-version }}
-        path: TestResults-${{ matrix.dotnet-version }}
-      # Use always() to always run this step to publish test results when there are test failures
-      if: ${{ always() }}
+        title: Tests Failed
+        token: ${{secrets.GITHUB_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: worflow-failed
+        body: Workflow failed for commit ${{github.sha}
+
+      
