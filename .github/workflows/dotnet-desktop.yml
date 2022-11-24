@@ -95,6 +95,5 @@ jobs:
           token: ${{ github.token }}
           title: Workflow fail
           body: Workflow failed for commit ${{github.sha}}
-          #token: ${{secrets.GITHUB_TOKEN}}
 
     

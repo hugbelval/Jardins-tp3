@@ -15,8 +15,7 @@ namespace TP2_14E_A2022.Materials
 
         public static Material? AddMaterial(string name, string description)
         {
-            return null;
-            /*if(name == string.Empty)
+            if (name == string.Empty)
             {
                 return null;
             }
@@ -24,7 +23,7 @@ namespace TP2_14E_A2022.Materials
             {
                 Material material = new Material(name, description);
                 return materialDal.AddMaterial(material);
-            }*/
+            }
         }
 
         public static List<Material> GetMaterials()
