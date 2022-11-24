@@ -95,6 +95,6 @@ jobs:
         token: ${{secrets.GITHUB_TOKEN}}
         assignees: ${{github.actor}}
         labels: worflow-failed
-        body: Workflow failed for commit ${{github.sha}
+        body: Workflow failed for commit ${{github.sha}}
 
       
