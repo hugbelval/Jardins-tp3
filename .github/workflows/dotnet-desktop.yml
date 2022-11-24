@@ -89,12 +89,12 @@ jobs:
     needs: testing
     runs-on: ubuntu-latest
     steps: 
-      - name: Create Issue Action
-        uses: nashmaniac/create-issue-action@v1.1
+      - name: Create an issue
+        uses: dacbd/create-issue-action@main
         with:
-          title: Tests Failed
-          token: ${{secrets.GITHUB_TOKEN}}
-          assignees: ${{github.actor}}
-          labels: worflow-failed
+          token: ${{ github.token }}
+          title: Workflow fail
           body: Workflow failed for commit ${{github.sha}}
+          #token: ${{secrets.GITHUB_TOKEN}}
+
     
