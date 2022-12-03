@@ -45,14 +45,5 @@ namespace TP2_14E_A2022.Lots
             }
             return null;
         }
-
-        public static bool DeleteLot(object lot)
-        {
-            if (lot is Lot lotToDelete)
-            {
-               return lotDal.DeleteLot(lotToDelete);
-            }
-            return false;
-        }
     }
 }

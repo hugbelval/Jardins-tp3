@@ -9,6 +9,5 @@ namespace TP2_14E_A2022.Data
         Lot? GetLot(int lotNumber);
         Lot AddLot(Lot lot);
         Lot UpdateLot(Lot lot);
-        bool DeleteLot(Lot lot);
     }
 }

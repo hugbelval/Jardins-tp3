@@ -60,20 +60,5 @@ namespace TP2_14E_A2022.Data
             }
             return lot;
         }
-
-        public bool DeleteLot(Lot lot)
-        {
-            try
-            {
-                IMongoCollection<Lot> lots = this.db.GetCollection<Lot>("Lot");
-                FilterDefinition<Lot> filter = Builders<Lot>.Filter.Eq("lotNumber", lot.lotNumber);
-                return lots.DeleteOne(filter).DeletedCount > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Impossible de se connecter à la base de données " + ex.Message, "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
-            }
-        }
     }
 }
