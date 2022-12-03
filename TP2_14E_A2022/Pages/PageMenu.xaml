@@ -27,7 +27,7 @@
                 <Label FontSize="20" >Bonjour</Label>
                 <TextBlock Name="tbUser" Style="{DynamicResource overLabel}" FontSize="18" VerticalAlignment="Center"  >NomUsager</TextBlock>
             </StackPanel >
-            <TextBlock Grid.Row="0" Grid.Column="1" Style="{DynamicResource overLabel}" FontSize="16" HorizontalAlignment="Right" MouseLeftButtonUp="BoutonDeconnexion_Click"   >Me déconnecter</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Style="{DynamicResource overLabel}" FontSize="16" HorizontalAlignment="Right" MouseLeftButtonUp="Button_Deconnect_Click"   >Me déconnecter</TextBlock>
         </StackPanel >
 
         <Rectangle Fill="#FF7DB569" IsHitTestVisible="False"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>

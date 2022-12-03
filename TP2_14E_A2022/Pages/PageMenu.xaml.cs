@@ -15,7 +15,7 @@ namespace TP2_14E_A2022.Pages
             tbUser.Text = UserSystem.GetConnectedUserName();
         }
 
-        private void BoutonDeconnexion_Click(object sender, MouseButtonEventArgs e)
+        private void Button_Deconnect_Click(object sender, MouseButtonEventArgs e)
         {
             this.GoToConnectionPage();
         }
