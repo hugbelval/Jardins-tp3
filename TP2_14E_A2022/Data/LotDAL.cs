@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using TP2_14E_A2022.DataModels;
+using TP2_14E_A2022.Lots;
 
 namespace TP2_14E_A2022.Data
 {
-    public class LotDAL : DAL, ILotDAL
+    public class LotDAL : DAL, ILotDAL, ILotDAL
     {
         public List<Lot> GetLots()
         {
@@ -15,6 +16,21 @@ namespace TP2_14E_A2022.Data
             try
             {
                 lots = db.GetCollection<Lot>("Lot").Aggregate().ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Impossible de se connecter à la base de données " + ex.Message, "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            return lots;
+        }
+
+        public List<Lot> GetActiveLots()
+        {
+            List<Lot> lots = new List<Lot>();
+
+            try
+            {
+                lots = db.GetCollection<Lot>("Lot").Find(x => x.state == LotState.Active).ToList();
             }
             catch (Exception ex)
             {
@@ -50,7 +66,7 @@ namespace TP2_14E_A2022.Data
                 FilterDefinition<Lot> filter = Builders<Lot>.Filter.Eq("lotNumber", lot.lotNumber);
                 UpdateDefinition<Lot> update = Builders<Lot>.Update.Set("ownerId", lot.ownerId)
                                                       .Set("state", lot.state)
-                                                      .Set("areaInMeterSquared", lot.areaInMeterSquared)
+                                                      .Set("areaInSquareMeters", lot.areaInSquareMeters)
                                                       .Set("depthInMeters", lot.depthInMeters);
                 lots.UpdateOne(filter, update);
             }

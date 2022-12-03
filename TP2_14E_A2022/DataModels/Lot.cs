@@ -7,6 +7,8 @@ namespace TP2_14E_A2022.DataModels
 {
     public class Lot
     {
+        private const float cubicMeterToLiterConversionRate = 1000f; 
+
         [BsonId]
         public ObjectId id;
 
@@ -19,19 +21,19 @@ namespace TP2_14E_A2022.DataModels
         [BsonElement("state")]
         public LotState state;
 
-        [BsonElement("areaInMeterSquared")]
-        public float areaInMeterSquared;
+        [BsonElement("areaInSquareMeters")]
+        public float areaInSquareMeters;
 
         [BsonElement("depthInMeters")]
         public float depthInMeters;
 
         [BsonConstructor]
-        public Lot(int lotNumber, ObjectId? ownerId, float areaInMeterSquared, float depthInMeters)
+        public Lot(int lotNumber, ObjectId? ownerId, float areaInSquareMeters, float depthInMeters)
         {
             this.lotNumber = lotNumber;
             this.ownerId = ownerId;
             this.state = LotState.Inactive;
-            this.areaInMeterSquared = areaInMeterSquared;
+            this.areaInSquareMeters = areaInSquareMeters;
             this.depthInMeters = depthInMeters;
         }
 
@@ -45,10 +47,15 @@ namespace TP2_14E_A2022.DataModels
                 return lotNumber == other.lotNumber &&
                     ownerId == other.ownerId &&
                     state == other.state &&
-                    areaInMeterSquared == other.areaInMeterSquared &&
+                    areaInSquareMeters == other.areaInSquareMeters &&
                     depthInMeters == other.depthInMeters;
             }
             return false;
+        }
+
+        public float GetVolumeInLiters()
+        {
+            return areaInSquareMeters * depthInMeters * cubicMeterToLiterConversionRate; 
         }
     }
 }
