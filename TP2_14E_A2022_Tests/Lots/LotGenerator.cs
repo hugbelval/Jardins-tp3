@@ -1,6 +1,6 @@
 ﻿using TP2_14E_A2022.DataModels;
 
-namespace TP2_14E_A2022_Tests.Materials
+namespace TP2_14E_A2022_Tests.Lots
 {
     public static class LotGenerator
     {

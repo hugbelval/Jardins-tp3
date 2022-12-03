@@ -40,9 +40,6 @@ namespace TP2_14E_A2022.DataModels
             if (obj == null)
                 return false;
 
-            if (ReferenceEquals(this, obj))
-                return true;
-
             if (obj is Lot other)
             {
                 return lotNumber == other.lotNumber &&
@@ -52,7 +49,6 @@ namespace TP2_14E_A2022.DataModels
                     depthInMeters == other.depthInMeters;
             }
             return false;
-
         }
     }
 }

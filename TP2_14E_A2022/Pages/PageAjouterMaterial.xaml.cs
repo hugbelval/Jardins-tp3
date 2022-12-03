@@ -27,7 +27,7 @@ namespace TP2_14E_A2022.Pages
 
         private void Bouton_Ajouter_Material(object sender, RoutedEventArgs e)
         {
-            if(LotSystem.AddMaterial(nomTextBox.Text, descriptionTextBox.Text) != null)
+            if(MaterialSystem.AddMaterial(nomTextBox.Text, descriptionTextBox.Text) != null)
             {
                 GoToMaterialsPage();
             }

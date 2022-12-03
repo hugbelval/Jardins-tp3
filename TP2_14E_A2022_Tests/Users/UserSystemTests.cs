@@ -3,8 +3,6 @@ using TP2_14E_A2022;
 using TP2_14E_A2022.Data;
 using TP2_14E_A2022.DataModels;
 using TP2_14E_A2022.Users;
-using TP2_14E_A2022.Users;
-using TP2_14E_A2022_Tests.Users;
 
 namespace TP2_14E_A2022_Tests.Users
 {

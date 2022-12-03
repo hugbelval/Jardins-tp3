@@ -44,7 +44,7 @@ namespace TP2_14E_A2022.Pages
                 selectedMaterial.name = nameTextBox.Text;
                 selectedMaterial.description = descriptionTextBox.Text;
                     
-                if(LotSystem.UpdateMaterial(selectedMaterial) == null)
+                if(MaterialSystem.UpdateMaterial(selectedMaterial) == null)
                 {
                     MessageBox.Show("Le nom du matériel ne peut pas être vide", "Champs Invalides", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
@@ -59,13 +59,13 @@ namespace TP2_14E_A2022.Pages
 
         private void Button_Supprimer_Material(object sender, RoutedEventArgs e)
         {
-            LotSystem.DeleteMaterial(listViewMaterials.SelectedItem);
+            MaterialSystem.DeleteMaterial(listViewMaterials.SelectedItem);
             FetchMaterials();
         }
 
         private void FetchMaterials()
         {
-            listViewMaterials.ItemsSource = LotSystem.GetMaterials();
+            listViewMaterials.ItemsSource = MaterialSystem.GetMaterials();
         }
 
         private void listViewMaterials_SelectionChanged(object sender, SelectionChangedEventArgs e)

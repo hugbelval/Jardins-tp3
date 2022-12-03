@@ -18,9 +18,9 @@ namespace TP2_14E_A2022_Tests.Materials
                 generatedMaterials.Add(MaterialGenerator.GenerateMaterial());
             }
             DALmock.Setup(x => x.GetMaterials()).Returns(generatedMaterials);
-            LotSystem.materialDal = DALmock.Object;
+            MaterialSystem.materialDal = DALmock.Object;
 
-            List<Material> result = LotSystem.GetMaterials();
+            List<Material> result = MaterialSystem.GetMaterials();
             
             Assert.AreEqual(generatedMaterials, result);
         }
@@ -31,9 +31,9 @@ namespace TP2_14E_A2022_Tests.Materials
             Mock<IMaterialDAL> DALmock = new Mock<IMaterialDAL>();
             List<Material> emptyList = new List<Material>();
             DALmock.Setup(x => x.GetMaterials()).Returns(emptyList);
-            LotSystem.materialDal = DALmock.Object;
+            MaterialSystem.materialDal = DALmock.Object;
 
-            List<Material> result = LotSystem.GetMaterials();
+            List<Material> result = MaterialSystem.GetMaterials();
 
             Assert.AreEqual(emptyList, result);
         }
@@ -44,9 +44,9 @@ namespace TP2_14E_A2022_Tests.Materials
             Mock<IMaterialDAL> DALmock = new Mock<IMaterialDAL>();
             Material generatedMaterial = MaterialGenerator.GenerateMaterial();
             DALmock.Setup(x => x.AddMaterial(It.IsAny<Material>())).Returns(generatedMaterial);
-            LotSystem.materialDal = DALmock.Object;
+            MaterialSystem.materialDal = DALmock.Object;
 
-            Material? result = LotSystem.AddMaterial(generatedMaterial.name, generatedMaterial.description);
+            Material? result = MaterialSystem.AddMaterial(generatedMaterial.name, generatedMaterial.description);
 
             Assert.AreEqual(generatedMaterial, result);
         }
@@ -57,9 +57,9 @@ namespace TP2_14E_A2022_Tests.Materials
             Mock<IMaterialDAL> DALmock = new Mock<IMaterialDAL>();
             Material generatedMaterial = MaterialGenerator.GenerateInvalidMaterial();
             DALmock.Setup(x => x.AddMaterial(It.IsAny<Material>())).Returns((Material)null);
-            LotSystem.materialDal = DALmock.Object;
+            MaterialSystem.materialDal = DALmock.Object;
 
-            Material? result = LotSystem.AddMaterial(generatedMaterial.name, generatedMaterial.description);
+            Material? result = MaterialSystem.AddMaterial(generatedMaterial.name, generatedMaterial.description);
             
             Assert.AreEqual(null, result);
         }
@@ -71,9 +71,9 @@ namespace TP2_14E_A2022_Tests.Materials
             Mock<IMaterialDAL> DALmock = new Mock<IMaterialDAL>();
             Material generatedMaterial = MaterialGenerator.GenerateMaterial();
             DALmock.Setup(x => x.UpdateMaterial(It.IsAny<Material>())).Returns(generatedMaterial);
-            LotSystem.materialDal = DALmock.Object;
+            MaterialSystem.materialDal = DALmock.Object;
 
-            Material? result = LotSystem.UpdateMaterial(generatedMaterial);
+            Material? result = MaterialSystem.UpdateMaterial(generatedMaterial);
 
             Assert.AreEqual(generatedMaterial, result);
         }
@@ -84,9 +84,9 @@ namespace TP2_14E_A2022_Tests.Materials
             Mock<IMaterialDAL> DALmock = new Mock<IMaterialDAL>();
             Material generatedMaterial = MaterialGenerator.GenerateInvalidMaterial();
             DALmock.Setup(x => x.UpdateMaterial(It.IsAny<Material>())).Returns((Material)null);
-            LotSystem.materialDal = DALmock.Object;
+            MaterialSystem.materialDal = DALmock.Object;
 
-            Material? result = LotSystem.UpdateMaterial(generatedMaterial);
+            Material? result = MaterialSystem.UpdateMaterial(generatedMaterial);
 
             Assert.AreEqual(null, result);
         }
@@ -97,9 +97,9 @@ namespace TP2_14E_A2022_Tests.Materials
             Mock<IMaterialDAL> DALmock = new Mock<IMaterialDAL>();
             Material generatedMaterial = MaterialGenerator.GenerateMaterial();
             DALmock.Setup(x => x.DeleteMaterial(It.IsAny<Material>())).Returns(true);
-            LotSystem.materialDal = DALmock.Object;
+            MaterialSystem.materialDal = DALmock.Object;
 
-            bool result = LotSystem.DeleteMaterial(generatedMaterial);
+            bool result = MaterialSystem.DeleteMaterial(generatedMaterial);
 
             Assert.AreEqual(true, result);
         }
@@ -110,9 +110,9 @@ namespace TP2_14E_A2022_Tests.Materials
             Mock<IMaterialDAL> DALmock = new Mock<IMaterialDAL>();
             Material generatedMaterial = MaterialGenerator.GenerateInvalidMaterial();
             DALmock.Setup(x => x.DeleteMaterial(It.IsAny<Material>())).Returns(false);
-            LotSystem.materialDal = DALmock.Object;
+            MaterialSystem.materialDal = DALmock.Object;
 
-            bool result = LotSystem.DeleteMaterial(generatedMaterial);
+            bool result = MaterialSystem.DeleteMaterial(generatedMaterial);
 
             Assert.AreEqual(false, result);
         }
