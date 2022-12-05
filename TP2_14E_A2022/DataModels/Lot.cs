@@ -7,7 +7,7 @@ namespace TP2_14E_A2022.DataModels
 {
     public class Lot
     {
-        private const float cubicMeterToLiterConversionRate = 1000f; 
+        private const float cubicMeterToLiterConversionRate = 1000f;
 
         [BsonId]
         public ObjectId id;

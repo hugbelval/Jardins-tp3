@@ -7,7 +7,7 @@ using TP2_14E_A2022.Lots;
 
 namespace TP2_14E_A2022.Data
 {
-    public class LotDAL : DAL, ILotDAL, ILotDAL
+    public class LotDAL : DAL, ILotDAL
     {
         public List<Lot> GetLots()
         {
