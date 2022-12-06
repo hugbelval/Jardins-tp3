@@ -12,27 +12,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TP2_14E_A2022.Users;
 
 namespace TP2_14E_A2022.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour PageGarden.xaml
-    /// </summary>
     public partial class PageGarden : Page
     {
         public PageGarden()
         {
             InitializeComponent();
+            tbUser.Text = UserSystem.GetConnectedUserName();
         }
         
         private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
         {
+            PageConnection pageConnection = new PageConnection();
 
+            this.NavigationService.Navigate(pageConnection);
         }
 
         private void Button_Disconnect_Click(object sender, RoutedEventArgs e)
         {
-
+            this.GoToConnectionPage();
         }
 
         private void Button_Add_Lot(object sender, RoutedEventArgs e)
@@ -47,7 +48,7 @@ namespace TP2_14E_A2022.Pages
 
         private void Button_Add_Material(object sender, RoutedEventArgs e)
         {
-
+            this.GoToPage<PageAddMaterial>();
         }
 
         private void Button_Delete_Material(object sender, RoutedEventArgs e)

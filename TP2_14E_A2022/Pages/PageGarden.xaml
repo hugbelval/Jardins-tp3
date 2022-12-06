@@ -54,26 +54,26 @@
 
         <Rectangle Fill="#FF7DB569" IsHitTestVisible="False" Grid.Row="1" Grid.Column="0" Grid.RowSpan="10" Grid.ColumnSpan="16"/>
 
-        <Image Source="../Ressources/0.png" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/1.png" Grid.Row="4" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/0.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/1.png" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/0.png" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/0.png" Grid.Row="4" Grid.Column="2" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/1.png" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/0.png" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/0.png" Grid.Row="1" Grid.Column="4" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/1.png" Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/1.png" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/1.png" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/0.png" Grid.Row="1" Grid.Column="6" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/1.png" Grid.Row="4" Grid.Column="6" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/1.png" Grid.Row="1" Grid.Column="7" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/1.png" Grid.Row="4" Grid.Column="7" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/0.png" Grid.Row="1" Grid.Column="8" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/0.png" Grid.Row="4" Grid.Column="8" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/0.png" Grid.Row="1" Grid.Column="9" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/1.png" Grid.Row="4" Grid.Column="9" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="2" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/empty-lot.png" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="4" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/empty-lot.png" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="6" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="6" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/empty-lot.png" Grid.Row="1" Grid.Column="7" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="7" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="8" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="8" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="9" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="9" Grid.RowSpan="3" Margin="5"></Image>
 
         <StackPanel Grid.Row="7" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4">
             <TextBlock Foreground="White" FontSize="14" FontWeight="Bold" TextAlignment="Center">Liste Des Membres</TextBlock>
@@ -103,7 +103,7 @@
             <Button Margin="15,5" Padding="5" Click="Button_Add_Material">Ajouter un nouveau</Button>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="13" Grid.RowSpan="10" Grid.ColumnSpan="3">
-            <Image Source="../Ressources/WaterCan.png"></Image>
+            <Image Source="../Ressources/water-can.png"></Image>
             <TextBlock FontSize="18" FontWeight="Bold" TextAlignment="Center" Foreground="White">Info Matériel</TextBlock>
             <TextBlock Margin="4" FontSize="16" TextAlignment="Center" Foreground="White">Nom</TextBlock>
             <TextBlock Margin="4" FontSize="16" TextAlignment="Center" Foreground="White">Description</TextBlock>
