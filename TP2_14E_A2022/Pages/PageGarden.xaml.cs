@@ -30,7 +30,7 @@ namespace TP2_14E_A2022.Pages
 
         }
 
-        private void Button_Deconnect_Click(object sender, RoutedEventArgs e)
+        private void Button_Disconnect_Click(object sender, RoutedEventArgs e)
         {
 
         }
