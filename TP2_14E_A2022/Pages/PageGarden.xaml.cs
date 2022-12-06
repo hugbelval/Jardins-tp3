@@ -24,5 +24,35 @@ namespace TP2_14E_A2022.Pages
         {
             InitializeComponent();
         }
+        
+        private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Deconnect_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Add_Lot(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Delete_Lot(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Add_Material(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Delete_Material(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
