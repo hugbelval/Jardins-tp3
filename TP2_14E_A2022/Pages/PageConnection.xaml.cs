@@ -4,9 +4,6 @@ using TP2_14E_A2022.Users;
 
 namespace TP2_14E_A2022.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour PageConnection.xaml
-    /// </summary>
     public partial class PageConnection : Page
     {
         public PageConnection()

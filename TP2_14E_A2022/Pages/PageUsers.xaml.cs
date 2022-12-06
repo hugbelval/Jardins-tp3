@@ -7,9 +7,6 @@ using TP2_14E_A2022.Users;
 
 namespace TP2_14E_A2022.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour PageUser.xaml
-    /// </summary>
     public partial class PageUsers : Page
     {
         public PageUsers()
@@ -19,7 +16,7 @@ namespace TP2_14E_A2022.Pages
             listViewUsers.SelectedIndex = 0;
             tbUser.Text = UserSystem.GetConnectedUserName();
         }
-        private void Button_Deconnect_Click(object sender, MouseButtonEventArgs e)
+        private void Button_Disconnect_Click(object sender, MouseButtonEventArgs e)
         {
             PageConnection pageConnection = new PageConnection();
 

@@ -30,14 +30,14 @@
                 <Label FontSize="20" >Bonjour</Label>
                 <TextBlock Name="tbUser" Style="{DynamicResource overLabel}" FontSize="18" VerticalAlignment="Center">NomUsager</TextBlock>
             </StackPanel>
-            <TextBlock Grid.Row="0" Grid.Column="1" Style="{DynamicResource overLabel}" FontSize="16" HorizontalAlignment="Right" MouseLeftButtonUp="Button_Deconnect_Click"   >Me déconnecter</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Style="{DynamicResource overLabel}" FontSize="16" HorizontalAlignment="Right" MouseLeftButtonUp="Button_Disconnect_Click"   >Me déconnecter</TextBlock>
             <TextBlock Grid.Row="0" Grid.Column="1" Margin="0,20,0,0" Style="{DynamicResource overLabel}" FontSize="20" HorizontalAlignment="Right" MouseLeftButtonUp="Button_Back_Main_Menu">Retour au menu</TextBlock>
         </StackPanel>
 
         <Rectangle Fill="#FF7DB569" IsHitTestVisible="False"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="8" Grid.RowSpan="2"/>
 
         <StackPanel Grid.Row="2" Grid.Column="7" Orientation="Vertical" VerticalAlignment="top">
-            <Button Padding="10,10,10,10" Margin="0,30,10,0" Click="Button_Ajouter_User">Ajouter le membre</Button>
+            <Button Padding="10,10,10,10" Margin="0,30,10,0" Click="Button_Add_User">Ajouter le membre</Button>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4">

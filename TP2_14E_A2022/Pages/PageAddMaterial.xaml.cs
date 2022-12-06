@@ -6,9 +6,6 @@ using TP2_14E_A2022.Users;
 
 namespace TP2_14E_A2022.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour PageAddMaterial.xaml
-    /// </summary>
     public partial class PageAddMaterial : Page
     {
         public PageAddMaterial()
@@ -16,7 +13,7 @@ namespace TP2_14E_A2022.Pages
             InitializeComponent();
             tbUser.Text = UserSystem.GetConnectedUserName();
         }
-        private void Button_Deconnect_Click(object sender, MouseButtonEventArgs e)
+        private void Button_Disconnect_Click(object sender, MouseButtonEventArgs e)
         {
             this.GoToConnectionPage();
         }
@@ -25,7 +22,7 @@ namespace TP2_14E_A2022.Pages
             this.GoToMenuPage();
         }
 
-        private void Button_Ajouter_Material(object sender, RoutedEventArgs e)
+        private void Button_Add_Material(object sender, RoutedEventArgs e)
         {
             if(MaterialSystem.AddMaterial(nomTextBox.Text, descriptionTextBox.Text) != null)
             {
@@ -39,7 +36,7 @@ namespace TP2_14E_A2022.Pages
         
         private void GoToMaterialsPage()
         {
-            this.GoToPage<PageMaterial>();
+            this.GoToPage<PageMaterials>();
         }
     }
 }
