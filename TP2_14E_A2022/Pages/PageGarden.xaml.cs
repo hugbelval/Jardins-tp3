@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace TP2_14E_A2022.Pages
 {
     /// <summary>
-    /// Logique d'interaction pour PageJardin.xaml
+    /// Logique d'interaction pour PageGarden.xaml
     /// </summary>
-    public partial class PageJardin : Page
+    public partial class PageGarden : Page
     {
-        public PageJardin()
+        public PageGarden()
         {
             InitializeComponent();
         }
