@@ -4,17 +4,14 @@ using TP2_14E_A2022.Users;
 
 namespace TP2_14E_A2022.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour PageConnexion.xaml
-    /// </summary>
-    public partial class PageConnexion : Page
+    public partial class PageConnection : Page
     {
-        public PageConnexion()
+        public PageConnection()
         {
             InitializeComponent();
         }
         
-        private void BoutonConnexion_Click(object sender, RoutedEventArgs e)
+        private void Button_Connection_Click(object sender, RoutedEventArgs e)
         {
             if (ConnectionSystem.ConnectUser(courrielTextBox.Text, mdpTextBox.Text))
             {

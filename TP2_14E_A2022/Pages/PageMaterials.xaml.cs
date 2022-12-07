@@ -7,36 +7,33 @@ using TP2_14E_A2022.Users;
 
 namespace TP2_14E_A2022.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour PageMaterial.xaml
-    /// </summary>
-    public partial class PageMaterial : Page
+    public partial class PageMaterials : Page
     {
-        public PageMaterial()
+        public PageMaterials()
         {
             InitializeComponent();
             FetchMaterials();
             listViewMaterials.SelectedIndex = 0;
             tbUser.Text = UserSystem.GetConnectedUserName();
         }
-        private void BoutonDeconnexion_Click(object sender, MouseButtonEventArgs e)
+        private void Button_Disconnect_Click(object sender, MouseButtonEventArgs e)
         {
-            PageConnexion pageConnexion = new PageConnexion();
+            PageConnection pageConnection = new PageConnection();
 
-            this.NavigationService.Navigate(pageConnexion);
+            this.NavigationService.Navigate(pageConnection);
         }
 
-        private void Bouton_Retour_Menu(object sender, RoutedEventArgs e)
+        private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
         {
             this.GoToMenuPage();
         }
         
-        private void Button_Ajouter_Material(object sender, RoutedEventArgs e)
+        private void Button_Add_Material(object sender, RoutedEventArgs e)
         {
-            this.GoToPage<PageAjouterMaterial>();
+            this.GoToPage<PageAddMaterial>();
         }
 
-        private void Button_Modifier_Material(object sender, RoutedEventArgs e)
+        private void Button_Modify_Material(object sender, RoutedEventArgs e)
         {
             if(listViewMaterials.SelectedItem is Material selectedMaterial)
             {
@@ -57,7 +54,7 @@ namespace TP2_14E_A2022.Pages
             }
         }
 
-        private void Button_Supprimer_Material(object sender, RoutedEventArgs e)
+        private void Button_Delete_Material(object sender, RoutedEventArgs e)
         {
             MaterialSystem.DeleteMaterial(listViewMaterials.SelectedItem);
             FetchMaterials();

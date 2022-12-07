@@ -7,9 +7,6 @@ using TP2_14E_A2022.Users;
 
 namespace TP2_14E_A2022.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour PageUser.xaml
-    /// </summary>
     public partial class PageUsers : Page
     {
         public PageUsers()
@@ -19,24 +16,24 @@ namespace TP2_14E_A2022.Pages
             listViewUsers.SelectedIndex = 0;
             tbUser.Text = UserSystem.GetConnectedUserName();
         }
-        private void BoutonDeconnexion_Click(object sender, MouseButtonEventArgs e)
+        private void Button_Disconnect_Click(object sender, MouseButtonEventArgs e)
         {
-            PageConnexion pageConnexion = new PageConnexion();
+            PageConnection pageConnection = new PageConnection();
 
-            this.NavigationService.Navigate(pageConnexion);
+            this.NavigationService.Navigate(pageConnection);
         }
 
-        private void Bouton_Retour_Menu(object sender, RoutedEventArgs e)
+        private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
         {
             this.GoToMenuPage();
         }
 
-        private void Button_Ajouter_User(object sender, RoutedEventArgs e)
+        private void Button_Add_User(object sender, RoutedEventArgs e)
         {
-            this.GoToPage<PageAjouterUser>();
+            this.GoToPage<PageAddUser>();
         }
 
-        private void Button_Modifier_User(object sender, RoutedEventArgs e)
+        private void Button_Modify_User(object sender, RoutedEventArgs e)
         {
             if (listViewUsers.SelectedItem is User selectedUser && subscriptionEndDatePicker.SelectedDate != null)
             {
@@ -61,7 +58,7 @@ namespace TP2_14E_A2022.Pages
             }
         }
 
-        private void Button_Supprimer_User(object sender, RoutedEventArgs e)
+        private void Button_Delete_User(object sender, RoutedEventArgs e)
         {
             UserSystem.DeleteUser(listViewUsers.SelectedItem);
             FetchUsers();

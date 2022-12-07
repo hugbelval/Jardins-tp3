@@ -4,9 +4,6 @@ using TP2_14E_A2022.Users;
 
 namespace TP2_14E_A2022.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour PageMenu.xaml
-    /// </summary>
     public partial class PageMenu : Page
     {
         public PageMenu()
@@ -15,7 +12,7 @@ namespace TP2_14E_A2022.Pages
             tbUser.Text = UserSystem.GetConnectedUserName();
         }
 
-        private void BoutonDeconnexion_Click(object sender, MouseButtonEventArgs e)
+        private void Button_Disconnect_Click(object sender, MouseButtonEventArgs e)
         {
             this.GoToConnectionPage();
         }
@@ -25,9 +22,9 @@ namespace TP2_14E_A2022.Pages
             this.GoToPage<PageUsers>();
         }
         
-        private void Button_NavigationPageMaterial(object sender, System.Windows.RoutedEventArgs e)
+        private void Button_NavigationPageMaterials(object sender, System.Windows.RoutedEventArgs e)
         {
-            this.GoToPage<PageMaterial>();
+            this.GoToPage<PageMaterials>();
         }
     }
 }

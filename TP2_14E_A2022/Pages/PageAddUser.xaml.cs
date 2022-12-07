@@ -6,26 +6,23 @@ using TP2_14E_A2022.Users;
 
 namespace TP2_14E_A2022.Pages
 {
-    /// <summary>
-    /// Logique d'interaction pour PageAjouterUser.xaml
-    /// </summary>
-    public partial class PageAjouterUser : Page
+    public partial class PageAddUser : Page
     {
-        public PageAjouterUser()
+        public PageAddUser()
         {
             InitializeComponent();
             tbUser.Text = UserSystem.GetConnectedUserName();
         }
-        private void BoutonDeconnexion_Click(object sender, MouseButtonEventArgs e)
+        private void Button_Disconnect_Click(object sender, MouseButtonEventArgs e)
         {
             this.GoToConnectionPage();
         }
-        private void Bouton_Retour_Menu(object sender, RoutedEventArgs e)
+        private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
         {
             this.GoToMenuPage();
         }
 
-        private void Bouton_Ajouter_User(object sender, RoutedEventArgs e)
+        private void Button_Add_User(object sender, RoutedEventArgs e)
         {
             if (UserSystem.AddUser(emailTextBox.Text, pwdTextBox.Text, firstNameTextBox.Text,
                 lastNameTextBox.Text, addressTextBox.Text, telephoneTextBox.Text, DateTime.Now.AddYears(1), false) != null)

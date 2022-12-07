@@ -1,4 +1,4 @@
-﻿<Page x:Class="TP2_14E_A2022.Pages.PageMaterial"
+﻿<Page x:Class="TP2_14E_A2022.Pages.PageMaterials"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -26,16 +26,16 @@
                 <Label FontSize="20" >Bonjour</Label>
                 <TextBlock Name="tbUser" Style="{DynamicResource overLabel}" FontSize="18" VerticalAlignment="Center">NomUsager</TextBlock>
             </StackPanel>
-            <TextBlock Grid.Row="0" Grid.Column="1" Style="{DynamicResource overLabel}" FontSize="16" HorizontalAlignment="Right" MouseLeftButtonUp="BoutonDeconnexion_Click"   >Me déconnecter</TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="1" Margin="0,20,0,0" Style="{DynamicResource overLabel}" FontSize="20" HorizontalAlignment="Right" MouseLeftButtonUp="Bouton_Retour_Menu">Retour au menu</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Style="{DynamicResource overLabel}" FontSize="16" HorizontalAlignment="Right" MouseLeftButtonUp="Button_Disconnect_Click"   >Me déconnecter</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Margin="0,20,0,0" Style="{DynamicResource overLabel}" FontSize="20" HorizontalAlignment="Right" MouseLeftButtonUp="Button_Back_Main_Menu">Retour au menu</TextBlock>
         </StackPanel>
 
         <Rectangle Fill="#FF7DB569" IsHitTestVisible="False"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
 
         <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" VerticalAlignment="top" Margin="30,50,30,0">
-            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Ajouter_Material">Ajouter un item</Button>
-            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Modifier_Material">Modifier un item</Button>
-            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Supprimer_Material">Supprimer un item</Button>
+            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Add_Material">Ajouter un item</Button>
+            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Modify_Material">Modifier un item</Button>
+            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Delete_Material">Supprimer un item</Button>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="25">

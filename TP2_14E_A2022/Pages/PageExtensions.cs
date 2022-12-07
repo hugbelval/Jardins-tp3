@@ -11,7 +11,7 @@ namespace TP2_14E_A2022.Pages
 
         public static void GoToConnectionPage(this Page page)
         {
-            GoToPage<PageConnexion>(page);
+            GoToPage<PageConnection>(page);
         }
 
         public static void GoToPage<TPage>(this Page page) where TPage : Page, new()
