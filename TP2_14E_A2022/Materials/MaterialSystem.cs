@@ -15,7 +15,7 @@ namespace TP2_14E_A2022.Materials
 
         public static Material? AddMaterial(string name, string description)
         {
-            if(name == string.Empty)
+            if (name == string.Empty)
             {
                 return null;
             }
