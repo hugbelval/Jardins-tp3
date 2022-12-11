@@ -88,11 +88,11 @@
 
         <StackPanel Grid.Row="7" Grid.Column="7" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <Separator Height="10"></Separator>
-            <Button Padding="5" Margin="15,0" Click="Button_Click_1">
+            <Button Padding="5" Margin="15,0" Click="Button_Remove_Member">
                 <TextBlock TextAlignment="Center" TextWrapping="Wrap">Retirer le membre du jardin</TextBlock>
             </Button>
             <Separator Height="10"></Separator>
-            <Button Padding="5" Margin="15,0" Click="Button_Click_2">
+            <Button Padding="5" Margin="15,0" Click="Button_Add_Member">
                 <TextBlock TextAlignment="Center" TextWrapping="Wrap"> Ajouter le membre à ce jardin</TextBlock>
             </Button>
         </StackPanel>

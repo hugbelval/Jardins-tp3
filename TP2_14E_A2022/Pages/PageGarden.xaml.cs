@@ -26,9 +26,9 @@ namespace TP2_14E_A2022.Pages
         
         private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
         {
-            PageConnection pageConnection = new PageConnection();
+            //PageConnection pageConnection = new PageConnection();
 
-            this.NavigationService.Navigate(pageConnection);
+            //this.NavigationService.Navigate(pageConnection);
         }
 
         private void Button_Disconnect_Click(object sender, RoutedEventArgs e)
@@ -48,10 +48,20 @@ namespace TP2_14E_A2022.Pages
 
         private void Button_Add_Material(object sender, RoutedEventArgs e)
         {
-            this.GoToPage<PageAddMaterial>();
+            //this.GoToPage<PageAddMaterial>();
         }
 
         private void Button_Delete_Material(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Remove_Member(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Add_Member(object sender, RoutedEventArgs e)
         {
 
         }
