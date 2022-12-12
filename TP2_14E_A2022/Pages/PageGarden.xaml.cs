@@ -57,16 +57,68 @@ namespace TP2_14E_A2022.Pages
 
         private void Button_Remove_Member(object sender, RoutedEventArgs e)
         {
-            // TODO : remove user from lot
+            BitmapImage bitmapImage = new BitmapImage();
+            Uri uri = new("../Ressources/selected-lot.png");
+            bitmapImage.BaseUri = uri;
 
+            List <Lot> lots = LotSystem.GetLots();
+            Image[] lotImages = { Lot0, Lot1, Lot2, Lot3, Lot4, Lot5, Lot6, Lot7, Lot8, Lot9, Lot10, Lot11, Lot12, Lot13, Lot14, Lot15, Lot16, Lot17, Lot18, Lot19 };
+            
+            for (int i = 0; i < lotImages.Length; i++)
+            {
+                if (lotImages[i].Source == bitmapImage)
+                {
+                    if(LotSystem.DeActivateLot(i) != null)
+                    {
+                        FetchGarden();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Le lot n'existe pas dans le système", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez sélectionner un lot", "Aucun Lot", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
             FetchGarden();
         }
 
         private void Button_Add_Member(object sender, RoutedEventArgs e)
         {
-            // TODO : add user to lot
+            BitmapImage bitmapImage = new BitmapImage();
+            Uri uri = new("../Ressources/selected-lot.png");
+            bitmapImage.BaseUri = uri;
 
-            FetchGarden();
+            List<Lot> lots = LotSystem.GetLots();
+            Image[] lotImages = { Lot0, Lot1, Lot2, Lot3, Lot4, Lot5, Lot6, Lot7, Lot8, Lot9, Lot10, Lot11, Lot12, Lot13, Lot14, Lot15, Lot16, Lot17, Lot18, Lot19 };
+
+            if (listViewMembers.SelectedItem is User selectedUser)
+            {
+                for (int i = 0; i < lotImages.Length; i++)
+                {
+                    if (lotImages[i].Source == bitmapImage)
+                    {
+                        if (LotSystem.UpdateLotOwner(i, selectedUser.id) != null)
+                        {
+                            FetchGarden();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Le lot ou le membre n'existe pas dans le système", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Veuillez sélectionner un lot", "Aucun Lot", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un membre", "Aucun Membre", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void FetchMaterials()
@@ -105,7 +157,14 @@ namespace TP2_14E_A2022.Pages
             List<Lot> lots = LotSystem.GetLots();
             foreach (Lot lot in lots)
             {
-                LotSystem.WinterLot(lot.lotNumber);
+                if (LotSystem.WinterLot(lot.lotNumber) != null)
+                {
+                    FetchGarden();
+                }
+                else
+                {
+                    MessageBox.Show("Les lots n'ont pas étés hivernés", "Lots Invalides", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }
