@@ -16,6 +16,7 @@ using TP2_14E_A2022.Lots;
 using TP2_14E_A2022.Materials;
 using TP2_14E_A2022.Users;
 using TP2_14E_A2022.DataModels;
+using System.Security.Policy;
 
 namespace TP2_14E_A2022.Pages
 {
@@ -165,6 +166,64 @@ namespace TP2_14E_A2022.Pages
                 {
                     MessageBox.Show("Les lots n'ont pas étés hivernés", "Lots Invalides", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+            }
+        }
+
+        private void listViewMaterials_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listViewMaterials.SelectedItem is Material selectedMaterial)
+            {
+                materialNameTextBox.Text = selectedMaterial.name;
+                materialDescriptionTextBox.Text = selectedMaterial.description;
+            }
+            else
+            {
+                materialNameTextBox.Text = "";
+                materialDescriptionTextBox.Text = "";
+            }
+        }
+
+        private void Changed_Selected_Lot(object sender, RoutedEventArgs e)
+        {
+            List<Lot> lots = LotSystem.GetLots();
+            Image[] lotImages = { Lot0, Lot1, Lot2, Lot3, Lot4, Lot5, Lot6, Lot7, Lot8, Lot9, Lot10, Lot11, Lot12, Lot13, Lot14, Lot15, Lot16, Lot17, Lot18, Lot19 };
+            bool found = false;
+            for (int i = 0; i < lotImages.Length; i++)
+            {
+                if (e.Source == lotImages[i])
+                {
+                    found = true;
+
+                    BitmapImage bitmapImage = new BitmapImage();
+                    Uri uri = new("../Ressources/selected-lot.png");
+                    bitmapImage.BaseUri = uri;
+
+                    lotImages[i].Source = bitmapImage;
+                    lotNumberTextBox.Text = lots[i].lotNumber.ToString();
+                    lotOwnerTextBox.Text = lots[i].ownerId.ToString();
+                    lotStatusTextBox.Text = lots[i].state.ToString();
+                }
+                else
+                {
+                    BitmapImage bitmapImage = new BitmapImage();
+                    Uri uri = new("../Ressources/wintered-lot.png");
+                    if (lots[i].state == LotState.Active)
+                    {
+                        uri = new("../Ressources/active-lot.png");
+                    }
+                    else if (lots[i].state == LotState.Wintered)
+                    {
+                        uri = new("../Ressources/inactive-lot.png");
+                    }
+                    bitmapImage.BaseUri = uri;
+                    lotImages[i].Source = bitmapImage;
+                }
+            }
+            if (!found)
+            {
+                lotNumberTextBox.Text = "";
+                lotOwnerTextBox.Text = "";
+                lotStatusTextBox.Text = "";
             }
         }
     }
