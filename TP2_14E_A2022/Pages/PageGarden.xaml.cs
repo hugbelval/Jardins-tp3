@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TP2_14E_A2022.Materials;
 using TP2_14E_A2022.Users;
 
 namespace TP2_14E_A2022.Pages
@@ -26,9 +27,9 @@ namespace TP2_14E_A2022.Pages
         
         private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
         {
-            //PageConnection pageConnection = new PageConnection();
+            PageConnection pageConnection = new PageConnection();
 
-            //this.NavigationService.Navigate(pageConnection);
+            this.NavigationService.Navigate(pageConnection);
         }
 
         private void Button_Disconnect_Click(object sender, RoutedEventArgs e)
@@ -36,24 +37,15 @@ namespace TP2_14E_A2022.Pages
             this.GoToConnectionPage();
         }
 
-        private void Button_Add_Lot(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Delete_Lot(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Button_Add_Material(object sender, RoutedEventArgs e)
         {
-            //this.GoToPage<PageAddMaterial>();
+            this.GoToPage<PageAddMaterial>();
         }
 
         private void Button_Delete_Material(object sender, RoutedEventArgs e)
         {
-
+            MaterialSystem.DeleteMaterial(listViewMaterials.SelectedItem);
+            FetchMaterials();
         }
 
         private void Button_Remove_Member(object sender, RoutedEventArgs e)
@@ -65,5 +57,16 @@ namespace TP2_14E_A2022.Pages
         {
 
         }
+
+        private void FetchMaterials()
+        {
+            listViewMaterials.ItemsSource = MaterialSystem.GetMaterials();
+        }
+
+        private void FetchMembers()
+        {
+            listViewMembers.ItemsSource = UserSystem.GetUsers();
+        }
+
     }
 }

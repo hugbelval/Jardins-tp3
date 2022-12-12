@@ -77,7 +77,7 @@
 
         <StackPanel Grid.Row="7" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4">
             <TextBlock Foreground="White" FontSize="14" FontWeight="Bold" TextAlignment="Center">Liste Des Membres</TextBlock>
-            <ListView Height="100" d:ItemsSource="{d:SampleData ItemCount=11}" Margin="10,0" FontSize="10"></ListView>
+            <ListView Name="listViewMembers" Height="100" d:ItemsSource="{d:SampleData ItemCount=11}" Margin="10,0" FontSize="10"></ListView>
         </StackPanel>
 
         <StackPanel Grid.Row="7" Grid.Column="4" Grid.RowSpan="4" Grid.ColumnSpan="3">
@@ -99,7 +99,7 @@
         <!--=======================================================================================================================-->
         <StackPanel Grid.Row="1" Grid.Column="10" Grid.RowSpan="10" Grid.ColumnSpan="3">
             <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="20" FontWeight="Bold" TextAlignment="Center">Matériels</TextBlock>
-            <ListView Height="230" d:ItemsSource="{d:SampleData ItemCount=15}" Margin="10,5" FontSize="10"></ListView>
+            <ListView Name="listViewMaterials" Height="230" d:ItemsSource="{d:SampleData ItemCount=15}" Margin="10,5" FontSize="10"></ListView>
             <Button Margin="15,5" Padding="5" Click="Button_Add_Material">Ajouter un nouveau</Button>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="13" Grid.RowSpan="10" Grid.ColumnSpan="3">
