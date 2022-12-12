@@ -53,47 +53,47 @@
         </StackPanel>
 
         <Rectangle Fill="#FF7DB569" IsHitTestVisible="False" Grid.Row="1" Grid.Column="0" Grid.RowSpan="10" Grid.ColumnSpan="16"/>
+        <Image Name="Lot0" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot1" Source="../Ressources/inactive-lot.png" Grid.Row="4" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot2" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot3" Source="../Ressources/inactive-lot.png" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot4" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot5" Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="2" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot6" Source="../Ressources/inactive-lot.png" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot7" Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot8" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="4" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot9" Source="../Ressources/inactive-lot.png" Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot10" Source="../Ressources/inactive-lot.png" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot11" Source="../Ressources/inactive-lot.png" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot12" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="6" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot13" Source="../Ressources/inactive-lot.png" Grid.Row="4" Grid.Column="6" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot14" Source="../Ressources/inactive-lot.png" Grid.Row="1" Grid.Column="7" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot15" Source="../Ressources/inactive-lot.png" Grid.Row="4" Grid.Column="7" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot16" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="8" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot17" Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="8" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot18" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="9" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot19" Source="../Ressources/inactive-lot.png" Grid.Row="4" Grid.Column="9" Grid.RowSpan="3" Margin="5"></Image>
 
-        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="2" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/empty-lot.png" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="4" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/empty-lot.png" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="6" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="6" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/empty-lot.png" Grid.Row="1" Grid.Column="7" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="7" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="8" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="8" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="9" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Source="../Ressources/empty-lot.png" Grid.Row="4" Grid.Column="9" Grid.RowSpan="3" Margin="5"></Image>
-
-        <StackPanel Grid.Row="7" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4">
+        <StackPanel Grid.Row="7" Grid.Column="3" Grid.RowSpan="4" Grid.ColumnSpan="4">
             <TextBlock Foreground="White" FontSize="14" FontWeight="Bold" TextAlignment="Center">Liste Des Membres</TextBlock>
             <ListView Name="listViewMembers" Height="100" d:ItemsSource="{d:SampleData ItemCount=11}" Margin="10,0" FontSize="10"></ListView>
         </StackPanel>
 
-        <StackPanel Grid.Row="7" Grid.Column="4" Grid.RowSpan="4" Grid.ColumnSpan="3">
+        <StackPanel Grid.Row="7" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <TextBlock Margin="5" FontSize="18" FontWeight="Bold" TextAlignment="Center" Foreground="White">Info Lot Jardin</TextBlock>
             <TextBlock Margin="4" FontSize="16" TextAlignment="Center" Foreground="White">Propriétaire</TextBlock>
             <TextBlock Margin="4" FontSize="16" TextAlignment="Center" Foreground="White">## de lot</TextBlock>
+            <TextBlock Margin="4" FontSize="16" TextAlignment="Center" Foreground="White">État du lot</TextBlock>
         </StackPanel>
 
         <StackPanel Grid.Row="7" Grid.Column="7" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <Separator Height="10"></Separator>
-            <Button Padding="5" Margin="15,0" Click="Button_Remove_Member">
-                <TextBlock TextAlignment="Center" TextWrapping="Wrap">Retirer le membre du jardin</TextBlock>
-            </Button>
-            <Separator Height="10"></Separator>
             <Button Padding="5" Margin="15,0" Click="Button_Add_Member">
                 <TextBlock TextAlignment="Center" TextWrapping="Wrap"> Ajouter le membre à ce jardin</TextBlock>
+            </Button>
+            <Separator Height="10"></Separator>
+            <Button Padding="5" Margin="15,0" Click="Button_Remove_Member">
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap">Retirer le membre du jardin</TextBlock>
             </Button>
         </StackPanel>
         <!--=======================================================================================================================-->
@@ -102,7 +102,12 @@
             <ListView Name="listViewMaterials" Height="230" d:ItemsSource="{d:SampleData ItemCount=15}" Margin="10,5" FontSize="10"></ListView>
             <Button Margin="15,5" Padding="5" Click="Button_Add_Material">Ajouter un nouveau</Button>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="13" Grid.RowSpan="10" Grid.ColumnSpan="3">
+        <StackPanel Grid.Row="1" Grid.Column="13" Grid.RowSpan="2" Grid.ColumnSpan="3" Panel.ZIndex="10">
+            <Button Margin="15,5" Padding="5" Click="Button_Winter_Lots">
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center">Hiverner tout les lots</TextBlock>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="13" Grid.RowSpan="10" Grid.ColumnSpan="3">
             <Image Source="../Ressources/water-can.png"></Image>
             <TextBlock FontSize="18" FontWeight="Bold" TextAlignment="Center" Foreground="White">Info Matériel</TextBlock>
             <TextBlock Margin="4" FontSize="16" TextAlignment="Center" Foreground="White">Nom</TextBlock>

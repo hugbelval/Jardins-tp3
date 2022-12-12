@@ -63,7 +63,7 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Vertical" VerticalAlignment="top" Margin="10,50,10,0">
+        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Vertical" VerticalAlignment="top" Margin="10,50,8,0">
             <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Add_User">Ajouter un membre</Button>
             <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Modify_User">Modifier un membre</Button>
             <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Delete_User">Retirer un membre</Button>
