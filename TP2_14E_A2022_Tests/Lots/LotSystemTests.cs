@@ -13,7 +13,7 @@ namespace TP2_14E_A2022_Tests.Lots
         public void GivenDbContainsLots_WhenGettingLots_ThenReturnsLotList()
         {
             Mock<ILotDAL> DALmock = new Mock<ILotDAL>();
-            List<Lot> generatedLots = LotGenerator.GenerateLotList();
+            List<Lot> generatedLots = LotGenerator.GenerateNormalLotList();
             DALmock.Setup(x => x.GetLots()).Returns(generatedLots);
             LotSystem.lotDal = DALmock.Object;
 
@@ -91,6 +91,32 @@ namespace TP2_14E_A2022_Tests.Lots
                 ))).Returns(expectedLot);
 
             LotSystem.lotDal = DALmock.Object;
+        }
+
+        [TestMethod]
+        public void GivenNormalLots_WhenGettingNumberOfSoilBagsNeeded_ThenReturnsAccurateNumber()
+        {
+            Mock<ILotDAL> DALmock = new Mock<ILotDAL>();
+            List<Lot> generatedLots = LotGenerator.GenerateNormalLotList();
+            DALmock.Setup(x => x.GetActiveLots()).Returns(generatedLots);
+            LotSystem.lotDal = DALmock.Object;
+
+            int result = LotSystem.GetNumberOfSoilBagsNeeded();
+
+            Assert.AreEqual(LotGenerator.numberOfSoilBagsNeeded, result);
+        }
+
+        [TestMethod]
+        public void GivenBigLots_WhenGettingNumberOfSoilBagsNeeded_ThenReturnsAccurateNumber()
+        {
+            Mock<ILotDAL> DALmock = new Mock<ILotDAL>();
+            List<Lot> generatedLots = LotGenerator.GenerateBigLotList();
+            DALmock.Setup(x => x.GetActiveLots()).Returns(generatedLots);
+            LotSystem.lotDal = DALmock.Object;
+
+            int result = LotSystem.GetNumberOfSoilBagsNeeded();
+
+            Assert.AreEqual(LotGenerator.numberOfSoilBagsNeeded, result);
         }
     }
 }

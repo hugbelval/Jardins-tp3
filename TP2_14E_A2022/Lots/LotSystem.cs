@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using TP2_14E_A2022.Data;
 using TP2_14E_A2022.DataModels;
@@ -7,6 +8,7 @@ namespace TP2_14E_A2022.Lots
 {
     public static class LotSystem
     {
+        private const int numberOfLitersInSoilBag = 50;
         public static ILotDAL lotDal;
 
         static LotSystem()
@@ -44,6 +46,17 @@ namespace TP2_14E_A2022.Lots
                 return lotDal.UpdateLot(lot);
             }
             return null;
+        }
+
+        public static int GetNumberOfSoilBagsNeeded()
+        {
+            List<Lot> activeLots = lotDal.GetActiveLots();
+            float totalLiters = 0;
+            foreach (Lot activeLot in activeLots)
+            {
+                totalLiters += activeLot.GetVolumeInLiters();
+            }
+            return (int)Math.Ceiling(totalLiters / numberOfLitersInSoilBag);
         }
     }
 }
