@@ -53,14 +53,14 @@
         </StackPanel>
 
         <Rectangle Fill="#FF7DB569" IsHitTestVisible="False" Grid.Row="1" Grid.Column="0" Grid.RowSpan="10" Grid.ColumnSpan="16"/>
-        <Image Name="Lot0" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot0" Source="../Ressources/selected-lot.png" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
         <Image Name="Lot1" Source="../Ressources/inactive-lot.png" Grid.Row="4" Grid.Column="0" Grid.RowSpan="3" Margin="5"></Image>
         <Image Name="Lot2" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Margin="5"></Image>
         <Image Name="Lot3" Source="../Ressources/inactive-lot.png" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Margin="5"></Image>
         <Image Name="Lot4" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Margin="5"></Image>
         <Image Name="Lot5" Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="2" Grid.RowSpan="3" Margin="5"></Image>
         <Image Name="Lot6" Source="../Ressources/inactive-lot.png" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
-        <Image Name="Lot7" Source="../Ressources/active-lot.png" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
+        <Image Name="Lot7" Source="../Ressources/wintered-lot.png" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Margin="5"></Image>
         <Image Name="Lot8" Source="../Ressources/active-lot.png" Grid.Row="1" Grid.Column="4" Grid.RowSpan="3" Margin="5"></Image>
         <Image Name="Lot9" Source="../Ressources/inactive-lot.png" Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Margin="5"></Image>
         <Image Name="Lot10" Source="../Ressources/inactive-lot.png" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Margin="5"></Image>
