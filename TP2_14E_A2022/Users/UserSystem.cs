@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TP2_14E_A2022.Data;
@@ -43,6 +44,11 @@ namespace TP2_14E_A2022.Users
         public static List<User> GetUsers()
         {
             return userDal.GetUsers();
+        }
+
+        public static User? GetUser(ObjectId userId)
+        {
+            return userDal.GetUser(userId);
         }
 
         public static User? UpdateUser(User user)

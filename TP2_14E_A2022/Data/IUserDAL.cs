@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MongoDB.Bson;
+using System.Collections.Generic;
 using TP2_14E_A2022.DataModels;
 
 namespace TP2_14E_A2022.Data
@@ -7,6 +8,7 @@ namespace TP2_14E_A2022.Data
     {
         User? ConnectUser(string email, string hashPwd);
         List<User> GetUsers();
+        User? GetUser(ObjectId userId);
         User AddUser(User user);
         User UpdateUser(User user);
         bool DeleteUser(User user);
