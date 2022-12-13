@@ -132,6 +132,7 @@ namespace TP2_14E_A2022.Pages
                     lotImages[lot.lotNumber].Source = new BitmapImage(new Uri(baseUri + @"\Ressources\wintered-lot.png"));
                 }
             }
+            TextBoxBagCountText.Text = LotSystem.GetNumberOfSoilBagsNeeded().ToString();
         }
 
         private void Button_Winter_Lots(object sender, RoutedEventArgs e)
@@ -179,7 +180,10 @@ namespace TP2_14E_A2022.Pages
                     if (lots[i].state == LotState.Active)
                     {
                         lotStatusTextBox.Text = "Actif";
-                        lotOwnerTextBox.Text = lots[i].ownerId.ToString();
+
+                        User owner = UserSystem.GetUser((MongoDB.Bson.ObjectId)lots[i].ownerId);
+
+                        lotOwnerTextBox.Text = owner.firstName + " " + owner.lastName;
                     }
                     else if (lots[i].state == LotState.Inactive)
                     {
