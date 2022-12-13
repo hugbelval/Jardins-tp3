@@ -45,10 +45,15 @@ namespace TP2_14E_A2022.DataModels
             this.subscriptionEnd = subscriptionEnd;
             this.isAdmin = isAdmin;
         }
+        
+        public bool isSubscribed()
+        {
+            return subscriptionEnd > DateTime.Now;
+        }
 
         public override string ToString()
         {
-            string abonnement = subscriptionEnd > DateTime.Now ? "Abonné" : "Non abonné";
+            string abonnement = isSubscribed() ? "Abonné" : "Non abonné";
             return firstName + " " + lastName + ", " + abonnement;
         }
     }

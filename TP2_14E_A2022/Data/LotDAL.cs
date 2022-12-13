@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -31,6 +32,21 @@ namespace TP2_14E_A2022.Data
             try
             {
                 lots = db.GetCollection<Lot>("Lots").Find(x => x.state == LotState.Active).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Impossible de se connecter à la base de données " + ex.Message, "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            return lots;
+        }
+
+        public List<Lot> GetLotsOwnedBy(ObjectId ownerId)
+        {
+            List<Lot> lots = new List<Lot>();
+
+            try
+            {
+                lots = db.GetCollection<Lot>("Lots").Find(x => x.ownerId == ownerId).ToList();
             }
             catch (Exception ex)
             {
