@@ -97,19 +97,22 @@
                 <TextBlock TextAlignment="Center" TextWrapping="Wrap"><Run Text="Retirer le membre du jardin"/></TextBlock>
             </Button>
         </StackPanel>
-        <!--=======================================================================================================================-->
+
         <StackPanel Grid.Row="1" Grid.Column="10" Grid.RowSpan="10" Grid.ColumnSpan="3">
             <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="20" FontWeight="Bold" TextAlignment="Center"><Run Text="Matériels"/></TextBlock>
             <ListView x:Name="listViewMaterials" SelectionChanged="listViewMaterials_SelectionChanged" Height="230" d:ItemsSource="{d:SampleData ItemCount=15}" Margin="10,5" FontSize="10"/>
             <Button Margin="15,5" Padding="5" Click="Button_Add_Material" Content="Ajouter un nouveau"/>
         </StackPanel>
+        
         <StackPanel Grid.Row="1" Grid.Column="13" Grid.RowSpan="2" Grid.ColumnSpan="3" Panel.ZIndex="10">
             <Button Margin="15,5" Padding="5" Click="Button_Winter_Lots">
                 <TextBlock TextWrapping="Wrap" TextAlignment="Center"><Run Text="Hiverner tout les lots"/></TextBlock>
             </Button>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="13" Grid.RowSpan="10" Grid.ColumnSpan="3">
-            <Image Height="100px" Source="../Ressources/water-can.png"/>
+
+        <Image x:Name="imageMaterial" Panel.ZIndex="25" Grid.Row="2" Grid.Column="13" Grid.RowSpan="4" Grid.ColumnSpan="3" Source="../Ressources/material.png"/>
+
+        <StackPanel Grid.Row="6" Grid.Column="13" Grid.RowSpan="10" Grid.ColumnSpan="3">
             <TextBlock FontSize="18" FontWeight="Bold" TextAlignment="Center" Foreground="White"><Run Text="Info Matériel"/></TextBlock>
             <TextBlock x:Name="materialNameTextBox" TextWrapping="Wrap" Margin="4" FontSize="16" TextAlignment="Center" Foreground="White"><Run Text="Nom"/></TextBlock>
             <TextBlock x:Name="materialDescriptionTextBox" TextWrapping="Wrap" Margin="4" FontSize="16" TextAlignment="Center" Foreground="White"><Run Text="Description"/></TextBlock>

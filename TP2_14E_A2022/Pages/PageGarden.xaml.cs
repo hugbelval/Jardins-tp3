@@ -35,6 +35,8 @@ namespace TP2_14E_A2022.Pages
             lotNumberTextBox.Text = "";
             lotOwnerTextBox.Text = "";
             lotStatusTextBox.Text = "";
+
+            imageMaterial.Source = new BitmapImage(new Uri(@"C:\Users\1936634\Desktop\Jardins-tp3\TP2_14E_A2022\Ressources\material.png"));
         }
         
         private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
