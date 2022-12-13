@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -11,6 +12,21 @@ namespace TP2_14E_A2022.Data
         public User? ConnectUser(string email, string hashPwd)
         {
             return db.GetCollection<User>("Users").Find(x => x.email == email && x.hashPwd == hashPwd).SingleOrDefaultAsync<User>().Result;
+        }
+
+        public User? GetUser(ObjectId userId)
+        {
+            User? result = null;
+
+            try
+            {
+                result = db.GetCollection<User>("Users").Find(x => x.id == userId).SingleOrDefaultAsync<User>().Result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Impossible de se connecter à la base de données " + ex.Message, "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            return result;
         }
 
         public List<User> GetUsers()
