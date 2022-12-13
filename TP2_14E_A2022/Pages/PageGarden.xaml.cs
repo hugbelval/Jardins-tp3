@@ -46,7 +46,7 @@ namespace TP2_14E_A2022.Pages
         
         private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
         {
-            this.GoToPage<PageMenu>();
+            this.GoToMenuPage();
         }
 
         private void Button_Disconnect_Click(object sender, RoutedEventArgs e)

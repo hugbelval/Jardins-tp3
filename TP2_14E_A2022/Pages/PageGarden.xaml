@@ -82,44 +82,47 @@
 
         <StackPanel Grid.Row="7" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <TextBlock Margin="5" FontSize="18" FontWeight="Bold" TextAlignment="Center" Foreground="White"><Run Text="Info Lot Jardin"/></TextBlock>
-            <TextBlock x:Name="lotOwnerTextBox" Margin="4" FontSize="16" TextAlignment="Center" Foreground="White"><Run Text="Propriétaire"/></TextBlock>
             <TextBlock x:Name="lotNumberTextBox" Margin="4" FontSize="16" TextAlignment="Center" Foreground="White"><Run Text="## de lot"/></TextBlock>
+            <TextBlock x:Name="lotOwnerTextBox" Margin="4" FontSize="16" TextAlignment="Center" Foreground="White"><Run Text="Propriétaire"/></TextBlock>
             <TextBlock x:Name="lotStatusTextBox" Margin="4" FontSize="16" TextAlignment="Center" Foreground="White"><Run Text="État du lot"/></TextBlock>
         </StackPanel>
 
         <StackPanel Grid.Row="7" Grid.Column="7" Grid.RowSpan="4" Grid.ColumnSpan="3">
             <Separator Background="#FF7DB569" Height="10"/>
             <Button Padding="5" Margin="15,0" Click="Button_Add_Member">
-                <TextBlock TextAlignment="Center" TextWrapping="Wrap"><Run Text="Ajouter le membre à ce jardin"/></TextBlock>
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap"><Run Text="Ajouter le membre à ce lot"/></TextBlock>
             </Button>
             <Separator Background="#FF7DB569" Height="10"/>
             <Button Padding="5" Margin="15,0" Click="Button_Remove_Member">
-                <TextBlock TextAlignment="Center" TextWrapping="Wrap"><Run Text="Retirer le membre du jardin"/></TextBlock>
+                <TextBlock TextAlignment="Center" TextWrapping="Wrap"><Run Text="Retirer le membre du lot"/></TextBlock>
             </Button>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="10" Grid.RowSpan="10" Grid.ColumnSpan="3">
+        <StackPanel Grid.Row="1" Grid.Column="13" Grid.RowSpan="10" Grid.ColumnSpan="3">
             <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="20" FontWeight="Bold" TextAlignment="Center"><Run Text="Matériels"/></TextBlock>
-            <ListView x:Name="listViewMaterials" SelectionChanged="listViewMaterials_SelectionChanged" Height="180" d:ItemsSource="{d:SampleData ItemCount=15}" Margin="10,5" FontSize="10"/>
-            <Button Margin="15,5" Padding="5" Click="Button_Add_Material" Content="Ajouter un nouveau"/>
-            <Separator Background="#FF7DB569" Height="20"/>
-            <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" TextAlignment="Center">Quantité de poche de terre (50L) pour les lots actifs</TextBlock>
-            <TextBlock Padding="10px" FontSize="14" Foreground="Gold" FontWeight="Bold" Name="TextBoxBagCountText" TextAlignment="Center"></TextBlock>
+            <ListView x:Name="listViewMaterials" SelectionChanged="listViewMaterials_SelectionChanged" Height="100" d:ItemsSource="{d:SampleData ItemCount=15}" Margin="10,5" FontSize="10"/>
+            <Button Margin="5" Padding="5" Click="Button_Add_Material">
+                <TextBlock FontSize="10" TextWrapping="Wrap" TextAlignment="Center">Ajouter un nouveau matériel</TextBlock>
+            </Button>
+            <Button Margin="5" Padding="5" Click="Button_Delete_Material">
+                <TextBlock FontSize="10" TextWrapping="Wrap" TextAlignment="Center">Retirer le matériel du jardin</TextBlock>
+            </Button>
+            <TextBlock FontSize="18" FontWeight="Bold" TextAlignment="Center" Foreground="White"><Run Text="Info Matériel"/></TextBlock>
+            <TextBlock x:Name="materialNameTextBox" TextWrapping="Wrap" Margin="4" FontSize="14" TextAlignment="Center" Foreground="White"><Run Text="Nom"/></TextBlock>
+            <TextBlock x:Name="materialDescriptionTextBox" TextWrapping="Wrap" Margin="4" FontSize="10" TextAlignment="Center" Foreground="White"><Run Text="Description"/></TextBlock>
         </StackPanel>
         
-        <StackPanel Grid.Row="1" Grid.Column="13" Grid.RowSpan="2" Grid.ColumnSpan="3" Panel.ZIndex="10">
+        <StackPanel Grid.Row="5" Grid.Column="10" Grid.RowSpan="2" Grid.ColumnSpan="3" Panel.ZIndex="10">
             <Button Margin="15,5" Padding="5" Click="Button_Winter_Lots">
                 <TextBlock TextWrapping="Wrap" TextAlignment="Center"><Run Text="Hiverner tout les lots"/></TextBlock>
             </Button>
         </StackPanel>
 
-        <Image x:Name="imageMaterial" Panel.ZIndex="25" Grid.Row="2" Grid.Column="13" Grid.RowSpan="4" Grid.ColumnSpan="3" Source="../Ressources/material.png"/>
+        <Image x:Name="imageMaterial" Panel.ZIndex="25" Grid.Row="1" Grid.Column="10" Grid.RowSpan="4" Grid.ColumnSpan="3" Source="../Ressources/material.png"/>
 
-        <StackPanel Grid.Row="6" Grid.Column="13" Grid.RowSpan="10" Grid.ColumnSpan="3">
-            <TextBlock FontSize="18" FontWeight="Bold" TextAlignment="Center" Foreground="White"><Run Text="Info Matériel"/></TextBlock>
-            <TextBlock x:Name="materialNameTextBox" TextWrapping="Wrap" Margin="4" FontSize="16" TextAlignment="Center" Foreground="White"><Run Text="Nom"/></TextBlock>
-            <TextBlock x:Name="materialDescriptionTextBox" TextWrapping="Wrap" Margin="4" FontSize="16" TextAlignment="Center" Foreground="White"><Run Text="Description"/></TextBlock>
-            <Button Margin="5" Padding="5" Click="Button_Delete_Material" Content="Retirer du jardin"/>
+        <StackPanel Grid.Row="6" Grid.Column="10" Grid.RowSpan="10" Grid.ColumnSpan="3" Margin="15,10">
+            <TextBlock Foreground="White" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" TextAlignment="Center">Quantité de poche de terre (50L) pour les lots actifs</TextBlock>
+            <TextBlock Padding="10px" FontSize="14" Foreground="Gold" FontWeight="Bold" Name="TextBoxBagCountText" TextAlignment="Center">###</TextBlock>
         </StackPanel>
     </Grid>
 </Page>
