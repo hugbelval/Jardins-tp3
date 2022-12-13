@@ -21,6 +21,16 @@ namespace TP2_14E_A2022.Lots
             return lotDal.GetLots();
         }
 
+        public static Lot? GetLot(int lotNumber)
+        {
+            return lotDal.GetLot(lotNumber);
+        }
+
+        public static List<Lot> GetLotsOwnedBy(ObjectId ownerId)
+        {
+            return lotDal.GetLotsOwnedBy(ownerId);
+        }
+
         public static Lot? UpdateLotOwner(int lotNumber, ObjectId newOwnerId)
         {
             return UpdateState(lotNumber, newOwnerId, LotState.Active);

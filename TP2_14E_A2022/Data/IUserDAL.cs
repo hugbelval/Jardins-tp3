@@ -8,6 +8,7 @@ namespace TP2_14E_A2022.Data
     {
         User? ConnectUser(string email, string hashPwd);
         List<User> GetUsers();
+        List<User> GetSubscribedUsers();
         User? GetUser(ObjectId userId);
         User AddUser(User user);
         User UpdateUser(User user);
