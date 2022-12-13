@@ -25,19 +25,21 @@ namespace TP2_14E_A2022.Pages
         public PageGarden()
         {
             InitializeComponent();
+            tbUser.Text = UserSystem.GetConnectedUserName();
+
             FetchMaterials();
             FetchMembers();
             FetchGarden();
             listViewMaterials.SelectedIndex = 0;
             listViewMembers.SelectedIndex = 0;
-            tbUser.Text = UserSystem.GetConnectedUserName();
+            lotNumberTextBox.Text = "";
+            lotOwnerTextBox.Text = "";
+            lotStatusTextBox.Text = "";
         }
         
         private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
         {
-            PageConnection pageConnection = new PageConnection();
-
-            this.NavigationService.Navigate(pageConnection);
+            this.GoToPage<PageMenu>();
         }
 
         private void Button_Disconnect_Click(object sender, RoutedEventArgs e)
@@ -58,67 +60,40 @@ namespace TP2_14E_A2022.Pages
 
         private void Button_Remove_Member(object sender, RoutedEventArgs e)
         {
-            BitmapImage bitmapImage = new BitmapImage();
-            Uri uri = new("../Ressources/selected-lot.png");
-            bitmapImage.BaseUri = uri;
-
-            List <Lot> lots = LotSystem.GetLots();
-            Image[] lotImages = { Lot0, Lot1, Lot2, Lot3, Lot4, Lot5, Lot6, Lot7, Lot8, Lot9, Lot10, Lot11, Lot12, Lot13, Lot14, Lot15, Lot16, Lot17, Lot18, Lot19 };
-            
-            for (int i = 0; i < lotImages.Length; i++)
+            string selectedLotNumberTextBoxText = lotNumberTextBox.Text;
+            int selectedLotNumber = -1;
+            if (selectedLotNumberTextBoxText != "")
             {
-                if (lotImages[i].Source == bitmapImage)
-                {
-                    if(LotSystem.DeActivateLot(i) != null)
-                    {
-                        FetchGarden();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Le lot n'existe pas dans le système", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Veuillez sélectionner un lot", "Aucun Lot", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+                selectedLotNumber = Convert.ToInt32(selectedLotNumberTextBoxText);
+                LotSystem.DeActivateLot(selectedLotNumber);
+                FetchGarden();
             }
-            FetchGarden();
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un lot", "Aucun Lot", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void Button_Add_Member(object sender, RoutedEventArgs e)
         {
-            BitmapImage bitmapImage = new BitmapImage();
-            Uri uri = new("../Ressources/selected-lot.png");
-            bitmapImage.BaseUri = uri;
-
-            List<Lot> lots = LotSystem.GetLots();
-            Image[] lotImages = { Lot0, Lot1, Lot2, Lot3, Lot4, Lot5, Lot6, Lot7, Lot8, Lot9, Lot10, Lot11, Lot12, Lot13, Lot14, Lot15, Lot16, Lot17, Lot18, Lot19 };
-
-            if (listViewMembers.SelectedItem is User selectedUser)
+            string selectedLotNumberTextBoxText = lotNumberTextBox.Text;
+            int selectedLotNumber = -1;
+            if (selectedLotNumberTextBoxText != "")
             {
-                for (int i = 0; i < lotImages.Length; i++)
+                selectedLotNumber = Convert.ToInt32(selectedLotNumberTextBoxText);
+                if (listViewMembers.SelectedItem is User selectedUser)
                 {
-                    if (lotImages[i].Source == bitmapImage)
-                    {
-                        if (LotSystem.UpdateLotOwner(i, selectedUser.id) != null)
-                        {
-                            FetchGarden();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Le lot ou le membre n'existe pas dans le système", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Veuillez sélectionner un lot", "Aucun Lot", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    }
+                    LotSystem.UpdateLotOwner(selectedLotNumber, selectedUser.id);
+                    FetchGarden();
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez sélectionner un membre", "Aucun Membre", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Veuillez sélectionner un membre", "Aucun Membre", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Veuillez sélectionner un lot", "Aucun Lot", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -140,15 +115,15 @@ namespace TP2_14E_A2022.Pages
             {
                 if (lot.state == LotState.Active)
                 {
-                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri("../Ressources/active-lot.png", UriKind.Relative));
+                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri(@"C:\Users\1936634\Desktop\Jardins-tp3\TP2_14E_A2022\Ressources\active-lot.png"));
                 }
                 else if (lot.state == LotState.Inactive)
                 {
-                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri("../Ressources/inactive-lot.png", UriKind.Relative));
+                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri(@"C:\Users\1936634\Desktop\Jardins-tp3\TP2_14E_A2022\Ressources\inactive-lot.png"));
                 }
                 else if (lot.state == LotState.Wintered)
                 {
-                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri("../Ressources/wintered-lot.png", UriKind.Relative));
+                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri(@"C:\Users\1936634\Desktop\Jardins-tp3\TP2_14E_A2022\Ressources\wintered-lot.png"));
                 }
             }
         }
@@ -185,45 +160,18 @@ namespace TP2_14E_A2022.Pages
 
         private void Changed_Selected_Lot(object sender, RoutedEventArgs e)
         {
+            FetchGarden();
             List<Lot> lots = LotSystem.GetLots();
             Image[] lotImages = { Lot0, Lot1, Lot2, Lot3, Lot4, Lot5, Lot6, Lot7, Lot8, Lot9, Lot10, Lot11, Lot12, Lot13, Lot14, Lot15, Lot16, Lot17, Lot18, Lot19 };
-            bool found = false;
-            for (int i = 0; i < lotImages.Length; i++)
+            for (int i = 0; i < lots.Count; i++)
             {
                 if (e.Source == lotImages[i])
                 {
-                    found = true;
-
-                    BitmapImage bitmapImage = new BitmapImage();
-                    Uri uri = new("../Ressources/selected-lot.png");
-                    bitmapImage.BaseUri = uri;
-
-                    lotImages[i].Source = bitmapImage;
+                    lotImages[i].Source = new BitmapImage(new Uri(@"C:\Users\1936634\Desktop\Jardins-tp3\TP2_14E_A2022\Ressources\selected-lot.png"));
                     lotNumberTextBox.Text = lots[i].lotNumber.ToString();
                     lotOwnerTextBox.Text = lots[i].ownerId.ToString();
                     lotStatusTextBox.Text = lots[i].state.ToString();
                 }
-                else
-                {
-                    BitmapImage bitmapImage = new BitmapImage();
-                    Uri uri = new("../Ressources/wintered-lot.png");
-                    if (lots[i].state == LotState.Active)
-                    {
-                        uri = new("../Ressources/active-lot.png");
-                    }
-                    else if (lots[i].state == LotState.Wintered)
-                    {
-                        uri = new("../Ressources/inactive-lot.png");
-                    }
-                    bitmapImage.BaseUri = uri;
-                    lotImages[i].Source = bitmapImage;
-                }
-            }
-            if (!found)
-            {
-                lotNumberTextBox.Text = "";
-                lotOwnerTextBox.Text = "";
-                lotStatusTextBox.Text = "";
             }
         }
     }
