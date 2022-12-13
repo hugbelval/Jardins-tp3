@@ -17,15 +17,20 @@ using TP2_14E_A2022.Materials;
 using TP2_14E_A2022.Users;
 using TP2_14E_A2022.DataModels;
 using System.Security.Policy;
+using System.IO;
 
 namespace TP2_14E_A2022.Pages
 {
     public partial class PageGarden : Page
     {
+        List<Image> lotImages;
+        string? baseUri = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
         public PageGarden()
         {
             InitializeComponent();
             tbUser.Text = UserSystem.GetConnectedUserName();
+
+            lotImages = new List<Image> { Lot0, Lot1, Lot2, Lot3, Lot4, Lot5, Lot6, Lot7, Lot8, Lot9, Lot10, Lot11, Lot12, Lot13, Lot14, Lot15, Lot16, Lot17, Lot18, Lot19 };
 
             FetchMaterials();
             FetchMembers();
@@ -36,7 +41,7 @@ namespace TP2_14E_A2022.Pages
             lotOwnerTextBox.Text = "";
             lotStatusTextBox.Text = "";
 
-            imageMaterial.Source = new BitmapImage(new Uri(@"C:\Users\1936634\Desktop\Jardins-tp3\TP2_14E_A2022\Ressources\material.png"));
+            imageMaterial.Source = new BitmapImage(new Uri(baseUri + @"\Ressources\material.png"));
         }
         
         private void Button_Back_Main_Menu(object sender, RoutedEventArgs e)
@@ -112,20 +117,19 @@ namespace TP2_14E_A2022.Pages
         private void FetchGarden()
         {
             List<Lot> lots = LotSystem.GetLots();
-            Image[] lotImages = { Lot0, Lot1, Lot2, Lot3, Lot4, Lot5, Lot6, Lot7, Lot8, Lot9, Lot10, Lot11, Lot12, Lot13, Lot14, Lot15, Lot16, Lot17, Lot18, Lot19 };
             foreach (Lot lot in lots)
             {
                 if (lot.state == LotState.Active)
                 {
-                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri(@"C:\Users\1936634\Desktop\Jardins-tp3\TP2_14E_A2022\Ressources\active-lot.png"));
+                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri(baseUri + @"\Ressources\active-lot.png"));
                 }
                 else if (lot.state == LotState.Inactive)
                 {
-                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri(@"C:\Users\1936634\Desktop\Jardins-tp3\TP2_14E_A2022\Ressources\inactive-lot.png"));
+                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri(baseUri + @"\Ressources\inactive-lot.png"));
                 }
                 else if (lot.state == LotState.Wintered)
                 {
-                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri(@"C:\Users\1936634\Desktop\Jardins-tp3\TP2_14E_A2022\Ressources\wintered-lot.png"));
+                    lotImages[lot.lotNumber].Source = new BitmapImage(new Uri(baseUri + @"\Ressources\wintered-lot.png"));
                 }
             }
         }
@@ -164,15 +168,29 @@ namespace TP2_14E_A2022.Pages
         {
             FetchGarden();
             List<Lot> lots = LotSystem.GetLots();
-            Image[] lotImages = { Lot0, Lot1, Lot2, Lot3, Lot4, Lot5, Lot6, Lot7, Lot8, Lot9, Lot10, Lot11, Lot12, Lot13, Lot14, Lot15, Lot16, Lot17, Lot18, Lot19 };
             for (int i = 0; i < lots.Count; i++)
             {
                 if (e.Source == lotImages[i])
                 {
-                    lotImages[i].Source = new BitmapImage(new Uri(@"C:\Users\1936634\Desktop\Jardins-tp3\TP2_14E_A2022\Ressources\selected-lot.png"));
+                    lotImages[i].Source = new BitmapImage(new Uri(baseUri + @"\Ressources\selected-lot.png"));
+
                     lotNumberTextBox.Text = lots[i].lotNumber.ToString();
-                    lotOwnerTextBox.Text = lots[i].ownerId.ToString();
-                    lotStatusTextBox.Text = lots[i].state.ToString();
+
+                    if (lots[i].state == LotState.Active)
+                    {
+                        lotStatusTextBox.Text = "Actif";
+                        lotOwnerTextBox.Text = lots[i].ownerId.ToString();
+                    }
+                    else if (lots[i].state == LotState.Inactive)
+                    {
+                        lotStatusTextBox.Text = "Inactif";
+                        lotOwnerTextBox.Text = "Aucun Propriétaire";
+                    }
+                    else if (lots[i].state == LotState.Wintered)
+                    {
+                        lotStatusTextBox.Text = "Hiverné";
+                        lotOwnerTextBox.Text = "Aucun Propriétaire";
+                    }
                 }
             }
         }
