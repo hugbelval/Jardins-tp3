@@ -26,5 +26,10 @@ namespace TP2_14E_A2022.Pages
         {
             this.GoToPage<PageMaterials>();
         }
+
+        private void Button_NavigationPageGarden(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.GoToPage<PageGarden>();
+        }
     }
 }

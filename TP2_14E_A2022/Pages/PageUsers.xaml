@@ -40,33 +40,39 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,50,5,0">
-            <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,10,0,0"><Run Text="Prénom"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Height="20" Margin="0,10,0,0"><Run Text="Prénom"/></TextBlock>
             <TextBox Name="firstNameTextBox" Height="20"/>
-            <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,130,0,0"><Run Text="Numéro de téléphone"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Height="20" Margin="0,130,0,0"><Run Text="Numéro de téléphone"/></TextBlock>
             <TextBox Name="telephoneTextBox" Height="20" RenderTransformOrigin="0.502,0.517"/>
-            <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,0,0,0"><Run Text="Exemple : 1234567890"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Height="20" Margin="0,0,0,0"><Run Text="Exemple : 1234567890"/></TextBlock>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,100,0,0" Grid.ColumnSpan="2">
-            <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,10,0,0"><Run Text="Adresse Civique"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Height="20" Margin="0,10,0,0"><Run Text="Adresse Civique"/></TextBlock>
             <TextBox Name="addressTextBox" Height="20"/>
-            <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,10,0,0"><Run Text="Courriel"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Height="20" Margin="0,10,0,0"><Run Text="Courriel"/></TextBlock>
             <TextBox Name="emailTextBox" Height="20"/>
-            <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,0,0,0"><Run Text="Exemple : abc@xyz.com"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Height="20" Margin="0,0,0,0"><Run Text="Exemple : abc@xyz.com"/></TextBlock>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Margin="5,50,0,0">
-            <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,10,0,0"><Run Text="Nom de famille"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Height="20" Margin="0,10,0,0"><Run Text="Nom de famille"/></TextBlock>
             <TextBox Name="lastNameTextBox" Height="20"/>
-            <TextBlock HorizontalAlignment="Center" Height="20" Margin="0,130,0,0"><Run Text="Fin de l'abonnement"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Height="20" Margin="0,130,0,0"><Run Text="Fin de l'abonnement"/></TextBlock>
             <DatePicker Name="subscriptionEndDatePicker"></DatePicker>
 
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Vertical" VerticalAlignment="top" Margin="10,50,10,0">
-            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Add_User">Ajouter un membre</Button>
-            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Modify_User">Modifier un membre</Button>
-            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Delete_User">Retirer un membre</Button>
+        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Vertical" VerticalAlignment="top" Margin="10,50,8,0">
+            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Add_User">
+                <TextBlock TextWrapping="Wrap">Ajouter un membre</TextBlock>
+            </Button>
+            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Modify_User">
+                <TextBlock TextWrapping="Wrap">Modifier un membre</TextBlock>
+            </Button>
+            <Button Padding="10,10,10,10" Margin="0,20,0,0" Click="Button_Delete_User">
+                <TextBlock TextWrapping="Wrap">Retirer un membre</TextBlock>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

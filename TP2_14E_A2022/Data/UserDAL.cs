@@ -1,8 +1,10 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 using TP2_14E_A2022.DataModels;
+using TP2_14E_A2022.Lots;
 
 namespace TP2_14E_A2022.Data
 {
@@ -11,6 +13,21 @@ namespace TP2_14E_A2022.Data
         public User? ConnectUser(string email, string hashPwd)
         {
             return db.GetCollection<User>("Users").Find(x => x.email == email && x.hashPwd == hashPwd).SingleOrDefaultAsync<User>().Result;
+        }
+
+        public User? GetUser(ObjectId userId)
+        {
+            User? result = null;
+
+            try
+            {
+                result = db.GetCollection<User>("Users").Find(x => x.id == userId).SingleOrDefaultAsync<User>().Result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Impossible de se connecter à la base de données " + ex.Message, "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            return result;
         }
 
         public List<User> GetUsers()
@@ -27,6 +44,22 @@ namespace TP2_14E_A2022.Data
             }
             return users;
         }
+
+        public List<User> GetSubscribedUsers()
+        {
+            List<User> users = new List<User>();
+
+            try
+            {
+                users = db.GetCollection<User>("Users").Find(x => x.subscriptionEnd > DateTime.Now).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Impossible de se connecter à la base de données " + ex.Message, "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            return users;
+        }
+
         public User AddUser(User user)
         {
             try

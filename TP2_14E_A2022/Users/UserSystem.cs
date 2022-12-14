@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TP2_14E_A2022.Data;
 using TP2_14E_A2022.DataModels;
+using TP2_14E_A2022.Lots;
 using TP2_14E_A2022.Utils;
 
 namespace TP2_14E_A2022.Users
@@ -45,6 +47,16 @@ namespace TP2_14E_A2022.Users
             return userDal.GetUsers();
         }
 
+        public static List<User> GetSubscribedUsers()
+        {
+            return userDal.GetSubscribedUsers();
+        }
+
+        public static User? GetUser(ObjectId userId)
+        {
+            return userDal.GetUser(userId);
+        }
+
         public static User? UpdateUser(User user)
         {
             if (!Validate(user.email, user.hashPwd, user.firstName, user.lastName, user.address, user.telephone))
@@ -58,6 +70,14 @@ namespace TP2_14E_A2022.Users
         {
             if (user is User userToDelete)
             {
+                List<Lot> lots = LotSystem.GetLotsOwnedBy(userToDelete.id);
+                if(lots != null)
+                {
+                    foreach (Lot lot in lots)
+                    {
+                        LotSystem.DeActivateLot(lot.lotNumber);
+                    }
+                }
                 return userDal.DeleteUser(userToDelete);
             }
             return false;
