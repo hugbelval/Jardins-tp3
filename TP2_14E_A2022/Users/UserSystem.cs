@@ -71,9 +71,12 @@ namespace TP2_14E_A2022.Users
             if (user is User userToDelete)
             {
                 List<Lot> lots = LotSystem.GetLotsOwnedBy(userToDelete.id);
-                foreach (Lot lot in lots)
+                if(lots != null)
                 {
-                    LotSystem.DeActivateLot(lot.lotNumber);
+                    foreach (Lot lot in lots)
+                    {
+                        LotSystem.DeActivateLot(lot.lotNumber);
+                    }
                 }
                 return userDal.DeleteUser(userToDelete);
             }
